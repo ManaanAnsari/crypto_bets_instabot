@@ -37,19 +37,5 @@ def send_signal():
         data = {'message': 'market, BTCETH is missing'}
         return jsonify(data), 406
 
-
-@app.route('/test_send_signal/', methods = ['POST'])
-def test_send_signal():
-    if request.method == 'POST':
-        POST = json.loads(request.data)
-        print(POST)
-        market, BTCETH = POST.get('market',None), POST.get('BTCETH',None)
-        if market and BTCETH:
-            data = {'message': 'tested successfully','market':market, 'BTCETH': BTCETH }
-            return jsonify(data), 200
-        data = {'message': 'market, BTCETH is missing'}
-        return jsonify(data), 406
-
-
 if __name__ == '__main__':
     app.run(threaded=True, port=5000, debug=True)

@@ -12,6 +12,7 @@ from textwrap import wrap
 import os
 from insta_upload import upload_post
 from cloud_api import upload_signal,delete_signals
+from global_vars import user_img 
 
 # makes an image
 def make_signal_image(market,tp,sl,BTCETH='BTC'):
@@ -60,7 +61,7 @@ def make_signal_image(market,tp,sl,BTCETH='BTC'):
         draw_interf.text((x, y), line, font=FONT_TEXT, fill=COLOR_TEXT) 
         y += line_height[index] + LINE_MARGIN
     
-    user_photo = Image.open('./temp.png', 'r').convert('RGBA')
+    user_photo = Image.open(user_img , 'r').convert('RGBA')
     img.paste(user_photo, COORD_PHOTO, mask=user_photo)
     
     img.save(f'./{img_name}.jpg')

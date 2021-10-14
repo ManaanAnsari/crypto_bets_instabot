@@ -18,4 +18,6 @@ cloud_name = "cloud",
 api_key = "123", 
 api_secret = "cloudsecret"
 
+# for image creation
+user_img = './temp.png'
 
