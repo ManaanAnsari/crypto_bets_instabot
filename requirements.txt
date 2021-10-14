@@ -1,0 +1,6 @@
+Pillow==8.2.0
+instabot==0.117.0
+gunicorn==20.0.4
+Flask==1.1.1
+cloudinary==1.25.0
+
